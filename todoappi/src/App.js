@@ -21,8 +21,6 @@ export default class App extends React.Component {
   }
 
   render() {
-    const data = this.state.iteemit;
-    console.log(data);
     if (this.state.virheViesti) {
       return(
         <div>
@@ -30,6 +28,8 @@ export default class App extends React.Component {
         </div>
       );
     }
+    const data = this.state.iteemit;
+    console.log(data);
     return (
       <div className="App">
         <TodoLista iteemit ={data}/>
