@@ -5,7 +5,8 @@ import TodoLista from './TodoLista';
 
 export default class App extends React.Component {
   state = {
-    iteemit: []
+    iteemit: [],
+    virheViesti: null
   }
 
   componentDidMount() {
@@ -14,11 +15,21 @@ export default class App extends React.Component {
         const iteemit = res.data;
         this.setState({ iteemit});
       })
+      .catch(error => {
+          this.setState({ virheViesti: error.message});
+      });
   }
 
   render() {
     const data = this.state.iteemit;
     console.log(data);
+    if (this.state.virheViesti) {
+      return(
+        <div>
+          Virhe: {this.state.virheViesti}
+        </div>
+      );
+    }
     return (
       <div className="App">
         <TodoLista iteemit ={data}/>
