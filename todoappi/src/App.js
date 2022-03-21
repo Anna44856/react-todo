@@ -29,11 +29,18 @@ export default class App extends React.Component {
       );
     }
     const data = this.state.iteemit;
-    console.log(data);
-    return (
-      <div className="App">
-        <TodoLista iteemit ={data}/>
-      </div>
-    );
-  }
+        console.log(data);
+        return (
+            <div className="App">
+                <TodoLista
+                    iteemit={data}
+                    merkitseTehtavaTehdyksi={this.merkitseTehtavaTehdyksiRajapinnassa}
+                    />
+            </div>
+        );
+    }
+
+    merkitseTehtavaTehdyksiRajapinnassa(id) {
+        console.log("TEHTY", id);
+    }
 }
