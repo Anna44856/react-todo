@@ -14,11 +14,11 @@ export default class App extends React.Component {
 
   componentDidMount() {
     axios.get(`https://127.0.0.1:8000/api/tehtavat/`)
-      .then(res => {
+      .then((res) => {
         const iteemit = res.data;
         this.setState({ iteemit});
       })
-      .catch(error => {
+      .catch((error) => {
           this.setState({ virheViesti: error.message});
       });
   }
