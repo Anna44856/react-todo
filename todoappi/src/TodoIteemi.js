@@ -12,7 +12,7 @@ function TodoIteemi(props) {
     const reuna = props.tehty ? 'light' : 'primary';
 
     return(
-        <Card style={{'max-width': '30rem'}} border={reuna}>
+        <Card style={{maxWidth: '30rem'}} border={reuna}>
             <Card.Header>{laatikko} Tehtävä {props.id}</Card.Header>
             <Card.Body>
                 <Card.Title>{otsikkoElementti}</Card.Title>
@@ -31,8 +31,11 @@ function TodoIteemi(props) {
 export default TodoIteemi;
 
 /*
+
 ? = kolmoisoperaattori (conditional ternary operator)
+
 Muotoa
+
    arvo = ehto ? jos_tosi : jos_epätosi;
 oleva lauseke asettaa arvoksi jos_tosi:n silloin kun ehto on tosi
 ja jos_epätosin silloin kun ehto on epätosi.
