@@ -22,11 +22,13 @@ function TodoLista(props) {
         "merkitseTehtavaTehdyksi": <funkio>
     }
     */
+    
     return(
         <Stack gap={2}>
             {props.iteemit.map(
                 (x) => (
                     <TodoIteemi 
+                        key={x.id}
                         id={x.id}    
                         otsikko ={x.otsikko}
                         tehty={x.tehty}
